@@ -4,15 +4,16 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <!-- Changed from 8 to 11 due to API level errors -->
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo" >
         <activity
             android:name="com.example.myfirstapp.MainActivity"
             android:label="@string/app_name" >
@@ -23,13 +24,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.myfirstapp.DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName="com.example.myfirstapp.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.myfirstapp.MainActivity" />
-        </activity>
+        	android:name="com.example.myfirstapp.DisplayMessageActivity"
+        	android:label="@string/title_activity_display_message"
+        	android:parentActivityName="com.example.myfirstapp.MainActivity" >
+        	<!-- Parent activity meta-data to support 4.0 and lower -->
+        	<meta-data
+            	android:name="android.support.PARENT_ACTIVITY"
+            	android:value="com.example.myfirstapp.MainActivity" />
+    	</activity>
     </application>
 
 </manifest>
